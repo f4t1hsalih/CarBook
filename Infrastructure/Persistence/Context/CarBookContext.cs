@@ -7,7 +7,7 @@ namespace Persistence.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=CarBook;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=CarBook;Trusted_Connection=True;TrustServerCertificate=True;");
         }
 
         public DbSet<About> Abouts { get; set; }
