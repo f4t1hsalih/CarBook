@@ -1,6 +1,6 @@
 ﻿namespace Domain.Entities
 {
-    internal class Testimonial
+    public class Testimonial
     {
         public int TestimonialID { get; set; }
         public string Name { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace Domain.Entities
 {
-    internal class CarDescription
+    public class CarDescription
     {
         public int CarDescriptionID { get; set; }
         public int CarID { get; set; }

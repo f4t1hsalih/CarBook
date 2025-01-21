@@ -1,6 +1,6 @@
 ﻿namespace Domain.Entities
 {
-    internal class FooterAddress
+    public class FooterAddress
     {
         public int FooterAddressID { get; set; }
         public string Description { get; set; }

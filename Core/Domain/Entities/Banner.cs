@@ -1,6 +1,6 @@
 ﻿namespace Domain.Entities
 {
-    internal class Banner
+    public class Banner
     {
         public int BannerID { get; set; }
         public string Title { get; set; }
