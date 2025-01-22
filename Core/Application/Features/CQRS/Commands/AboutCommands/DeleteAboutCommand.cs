@@ -1,10 +1,10 @@
 ﻿namespace Application.Features.CQRS.Commands.AboutCommands
 {
-    public class RemoveAboutCommand
+    public class DeleteAboutCommand
     {
         public int Id { get; set; }
 
-        public RemoveAboutCommand(int id)
+        public DeleteAboutCommand(int id)
         {
             Id = id;
         }

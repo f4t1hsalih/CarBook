@@ -13,15 +13,15 @@ namespace API.Controllers
         private readonly GetAboutQueryHandler _getAboutQueryHandler;
         private readonly GetAboutByIdQueryHandler _getAboutByIdQueryHandler;
         private readonly UpdateAboutCommandHandler _updateAboutCommandHandler;
-        private readonly RemoveAboutCommandHandler _removeAboutCommandHandler;
+        private readonly DeleteAboutCommandHandler _deleteAboutCommandHandler;
 
-        public AboutsController(AddAboutCommandHandler addAboutCommandHandler, GetAboutQueryHandler getAboutQueryHandler, GetAboutByIdQueryHandler getAboutByIdQueryHandler, UpdateAboutCommandHandler updateAboutCommandHandler, RemoveAboutCommandHandler removeAboutCommandHandler)
+        public AboutsController(AddAboutCommandHandler addAboutCommandHandler, GetAboutQueryHandler getAboutQueryHandler, GetAboutByIdQueryHandler getAboutByIdQueryHandler, UpdateAboutCommandHandler updateAboutCommandHandler, DeleteAboutCommandHandler deleteAboutCommandHandler)
         {
             _addAboutCommandHandler = addAboutCommandHandler;
             _getAboutQueryHandler = getAboutQueryHandler;
             _getAboutByIdQueryHandler = getAboutByIdQueryHandler;
             _updateAboutCommandHandler = updateAboutCommandHandler;
-            _removeAboutCommandHandler = removeAboutCommandHandler;
+            _deleteAboutCommandHandler = deleteAboutCommandHandler;
         }
 
         [HttpGet]
@@ -53,9 +53,9 @@ namespace API.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> RemoveAbout(int id)
+        public async Task<IActionResult> DeleteAbout(int id)
         {
-            await _removeAboutCommandHandler.Handle(new RemoveAboutCommand(id));
+            await _deleteAboutCommandHandler.Handle(new DeleteAboutCommand(id));
             return Ok("Kayıt Başarıyla Silindi");
         }
     }

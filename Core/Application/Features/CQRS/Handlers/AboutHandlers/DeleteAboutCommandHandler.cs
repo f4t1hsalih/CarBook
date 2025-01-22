@@ -4,16 +4,16 @@ using Domain.Entities;
 
 namespace Application.Features.CQRS.Handlers.AboutHandlers
 {
-    public class RemoveAboutCommandHandler
+    public class DeleteAboutCommandHandler
     {
         private readonly IRepository<About> _repository;
 
-        public RemoveAboutCommandHandler(IRepository<About> repository)
+        public DeleteAboutCommandHandler(IRepository<About> repository)
         {
             _repository = repository;
         }
 
-        public async Task Handle(RemoveAboutCommand command)
+        public async Task Handle(DeleteAboutCommand command)
         {
             var value = await _repository.GetByIdAsync(command.Id);
             if (value == null)
